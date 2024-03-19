@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculateEmployeePay() {
+    let employeeName = prompt("Enter employee name:");
+    let hoursWorked = parseFloat(prompt("Enter hours worked:"));
+    let ratePerHour = parseFloat(prompt("Enter rate per hour:"));
+  
+    if (isNaN(hoursWorked) || isNaN(ratePerHour)) {
+      alert("Invalid input. Please enter numbers only.");
+      return;
+    }
+  
+    let basicPay = hoursWorked * ratePerHour;
+  
+    let tax;
+    if (basicPay > 50000) {
+      tax = basicPay * 0.2;
+    } else if (basicPay > 20000 && basicPay <= 50000) {
+      tax = basicPay * 0.1;
+    } else {
+      tax = 0;
+    }
+  
+    let netPay = basicPay - tax;
+  
+    alert(`Employee Name: ${employeeName}\nBasic Pay: ${basicPay.toFixed(2)}\nTax: ${tax.toFixed(2)}\nNet Pay: ${netPay.toFixed(2)}`);
+  }
+  
+  calculateEmployeePay();
+    </script>
+      
+    
+</body>
+</html>
